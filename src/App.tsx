@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { HeroLanding } from './components/HeroLanding';
-import { TrustRibbon } from './components/TrustRibbon';
-import { HealthSolutions } from './components/HealthSolutions';
-import { TrustTrackRecord } from './components/TrustTrackRecord';
-import { MidPageLeadForm } from './components/MidPageLeadForm';
-import { Specialties } from './components/Specialties';
-import { DiabetesFocus } from './components/DiabetesFocus';
-import { ConsultationJourney } from './components/ConsultationJourney';
-import { ReviewsCarousel } from './components/ReviewsCarousel';
-import { ClinicSection } from './components/ClinicSection';
-import { GalleryBento } from './components/GalleryBento';
-import { FaqSection } from './components/FaqSection';
-import { FinalCta } from './components/FinalCta';
-import { Footer } from './components/Footer';
+import { EditorialNavbar } from './components/editorial/EditorialNavbar';
+import { EditorialHero } from './components/editorial/EditorialHero';
+import { EditorialTrustTransition } from './components/editorial/EditorialTrustTransition';
+import { EditorialAbout } from './components/editorial/EditorialAbout';
+import { EditorialServices } from './components/editorial/EditorialServices';
+import { EditorialDiabetesFocus } from './components/editorial/EditorialDiabetesFocus';
+import { EditorialReviews } from './components/editorial/EditorialReviews';
+import { EditorialConsultationJourney } from './components/editorial/EditorialConsultationJourney';
+import { EditorialMidLeadForm } from './components/editorial/EditorialMidLeadForm';
+import { EditorialClinicSection } from './components/editorial/EditorialClinicSection';
+import { EditorialFaq } from './components/editorial/EditorialFaq';
+import { EditorialFinalCta } from './components/editorial/EditorialFinalCta';
+import { EditorialFooter } from './components/editorial/EditorialFooter';
 import { AppointmentModal } from './components/AppointmentModal';
 import { MobileActionBar } from './components/MobileActionBar';
 
@@ -29,63 +27,59 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#F8FAFC] text-slate-900 flex flex-col antialiased selection:bg-emerald-100 selection:text-emerald-900">
-      {/* Sticky Navigation Header with Direct Call & Appointment Buttons */}
-      <Navbar onOpenAppointment={handleOpenAppointment} />
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#0A0E0C] text-slate-900 flex flex-col antialiased selection:bg-emerald-500/30 selection:text-white">
+      {/* Floating / Sticky Transparent Editorial Header */}
+      <EditorialNavbar onOpenAppointment={handleOpenAppointment} />
 
-      {/* Main Page Content Flow - Modeled after the Reference Landing Page Pattern */}
-      <main className="flex-1">
-        {/* High-Converting Google Ads Style Hero with Inline Appointment Form & Doctor Photo */}
-        <HeroLanding onOpenAppointment={handleOpenAppointment} />
+      {/* Main Page Flow */}
+      <main className="flex-1 pt-0">
+        {/* Section 1: Cinematic Full-Width Edge-to-Edge Hero with Sophisticated Multi-Layer Gradient */}
+        <EditorialHero onOpenAppointment={handleOpenAppointment} />
 
-        {/* 4 Trust & Credibility Badges Ribbon */}
-        <TrustRibbon />
+        {/* Section 2: Seamless Dark Trust Transition & Core Credentials */}
+        <EditorialTrustTransition onOpenAppointment={handleOpenAppointment} />
 
-        {/* "We Provide Reliable Solutions For Your Health Problems" - 4 Condition Solution Cards */}
-        <HealthSolutions onOpenAppointment={handleOpenAppointment} />
+        {/* Section 3: Asymmetric Editorial Physician Profile & Clinical Values */}
+        <EditorialAbout onOpenAppointment={handleOpenAppointment} />
 
-        {/* "Over 80+ 5-Star Reviews Have Brought Peace of Mind" - Trust Track Record & Doctor Bio */}
-        <TrustTrackRecord onOpenAppointment={handleOpenAppointment} />
+        {/* Section 4: Numbered Editorial Clinical Focus & Health Solutions */}
+        <EditorialServices onOpenAppointment={handleOpenAppointment} />
 
-        {/* Mid-Page Fast Consultation Booking Form */}
-        <MidPageLeadForm onOpenAppointment={handleOpenAppointment} />
+        {/* Section 5: Dedicated Diabetology Care & 5-Step Metabolic Roadmap */}
+        <EditorialDiabetesFocus onOpenAppointment={handleOpenAppointment} />
 
-        {/* Detailed Specialty Disciplines (General Medicine & Diabetology) */}
-        <Specialties onOpenAppointment={handleOpenAppointment} />
+        {/* Section 6: Large Quotation Patient Testimonials & Google Score */}
+        <EditorialReviews />
 
-        {/* Diabetes Care Framework */}
-        <DiabetesFocus onOpenAppointment={handleOpenAppointment} />
+        {/* Section 7: 4-Step Patient Consultation Pathway */}
+        <EditorialConsultationJourney onOpenAppointment={handleOpenAppointment} />
 
-        {/* 4-Step Consultation Journey */}
-        <ConsultationJourney />
+        {/* Section 8: Direct Clinic Scheduling & Consultation Enquiry Form */}
+        <EditorialMidLeadForm onOpenAppointment={handleOpenAppointment} />
 
-        {/* What Patients Say - 4.9 ★ Rating & Testimonials */}
-        <ReviewsCarousel />
+        {/* Section 9: Practice Location, Facility & Environment Photos */}
+        <EditorialClinicSection onOpenAppointment={handleOpenAppointment} />
 
-        {/* Visit Our Clinic - Arnay Medical, Haltu with Directions & Map */}
-        <ClinicSection onOpenAppointment={handleOpenAppointment} />
+        {/* Section 10: Frequently Asked Questions Accordion */}
+        <EditorialFaq onOpenAppointment={handleOpenAppointment} />
 
-        {/* Photo Gallery of Clinic Facility */}
-        <GalleryBento />
-
-        {/* Frequently Asked Questions */}
-        <FaqSection onOpenAppointment={handleOpenAppointment} />
-
-        {/* "This Is Your Moment to Take Action!" - Final High-Impact CTA */}
-        <FinalCta onOpenAppointment={handleOpenAppointment} />
+        {/* Section 11: Final Cinematic Consultation Call-to-Action Banner */}
+        <EditorialFinalCta onOpenAppointment={handleOpenAppointment} />
       </main>
 
-      {/* Comprehensive Medical Footer */}
-      <Footer onOpenAppointment={handleOpenAppointment} />
+      {/* Editorial Healthcare Footer */}
+      <EditorialFooter onOpenAppointment={handleOpenAppointment} />
 
-      {/* Appointment Booking Modal */}
+      {/* Functional Appointment Modal */}
       <AppointmentModal
         isOpen={isAppointmentOpen}
         onClose={handleCloseAppointment}
       />
 
-      {/* Mobile Sticky Bottom Action Bar with Make a Call & Appointment */}
+      {/* Mobile Sticky Bottom Action Bar with Direct Triggers */}
       <MobileActionBar onOpenAppointment={handleOpenAppointment} />
     </div>
   );
 }
+
+

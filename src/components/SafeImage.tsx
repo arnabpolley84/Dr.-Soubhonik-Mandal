@@ -17,6 +17,11 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   const [currentSrc, setCurrentSrc] = useState<string>(src);
   const [hasError, setHasError] = useState<boolean>(false);
 
+  React.useEffect(() => {
+    setCurrentSrc(src);
+    setHasError(false);
+  }, [src]);
+
   const handleError = () => {
     if (fallbackSrc && currentSrc !== fallbackSrc) {
       setCurrentSrc(fallbackSrc);
