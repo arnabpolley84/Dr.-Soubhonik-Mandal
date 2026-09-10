@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Souvonik Mandal | Medicine Specialist & Diabetologist",
+  "description": "Consult Dr. Souvonik Mandal, Medicine Specialist & Diabetologist at Arnay Medical, Haltu, South Kolkata. View clinic information, patient reviews and appointment details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
